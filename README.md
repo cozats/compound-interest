@@ -1,24 +1,34 @@
-# Compound Interest Calculator
+# Compound *Interest*
 
-A minimal, monochromatic compound interest calculator built as a single HTML file. Serif typography, shadcn-inspired UI, dark/light mode.
+Your money is working. This shows you how hard.
 
-**[Live Demo](https://cozats.github.io/compound-interest/)**
+**[Open the calculator](https://cozats.github.io/compound-interest/)**
 
-## Features
+![Compound Interest Calculator](preview.png)
 
-- Slider-based inputs for principal, monthly contribution, rate, and time period
-- Compound frequency toggle (annual, quarterly, monthly, daily)
-- Real-time results with bar chart visualization
-- Dark/light mode switch
-- Zero dependencies beyond React and Babel (loaded via CDN)
+---
 
-## Stack
+A single-file compound interest calculator that doesn't look like it was built in a spreadsheet. Monochromatic, slider-driven, zero fluff.
 
-- React 18
-- Vanilla CSS (no framework)
-- Instrument Serif + DM Sans + JetBrains Mono
-- Single `index.html` file, no build step
+Drag the sliders. Watch the numbers move. See the split between what you put in and what time gave you back. That's it.
 
-## License
+### What's inside
 
-MIT
+- **Sliders, not forms** — adjust principal, contributions, rate, and timeline by feel
+- **Multi-currency** — EUR, USD, GBP, JPY with one tap
+- **Compound frequency** — annual, quarterly, monthly, or daily
+- **Growth chart** — hover any bar to see the year-by-year breakdown
+- **Dark / Light mode** — toggle in the top right
+- **Single HTML file** — no build step, no dependencies beyond React via CDN
+
+### Typography
+
+Instrument Serif for headlines. DM Sans for interface. JetBrains Mono for numbers. The way it should be.
+
+### Run it
+
+Download `index.html`. Open it. Done.
+
+---
+
+MIT License
