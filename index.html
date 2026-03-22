@@ -506,18 +506,28 @@ function Slider({ min, max, step, value, onChange }) {
 }
 
 /* ---- Helpers ---- */
+const currencies = [
+  { code: 'EUR', symbol: '\u20ac' },
+  { code: 'USD', symbol: '$' },
+  { code: 'GBP', symbol: '\u00a3' },
+  { code: 'JPY', symbol: '\u00a5' },
+];
+
 const fmt = n => Math.round(n).toLocaleString('en-US');
-const money = n => '$' + fmt(n);
 
 /* ---- App ---- */
 function App() {
   const [theme, setTheme] = useState('dark');
+  const [currency, setCurrency] = useState('EUR');
   const [principal, setPrincipal] = useState(10000);
   const [monthly, setMonthly] = useState(500);
   const [rate, setRate] = useState(7);
   const [years, setYears] = useState(20);
   const [freq, setFreq] = useState(12);
   const [tip, setTip] = useState({ on: false, x: 0, y: 0, lines: [] });
+
+  const sym = currencies.find(c => c.code === currency).symbol;
+  const money = n => sym + fmt(n);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -615,6 +625,19 @@ function App() {
               {freqs.map(f => (
                 <button key={f.v} className={`seg-item ${freq === f.v ? 'on' : ''}`} onClick={() => setFreq(f.v)}>
                   {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="field">
+            <div className="field-top">
+              <label>Currency</label>
+            </div>
+            <div className="seg-control seg-4">
+              {currencies.map(c => (
+                <button key={c.code} className={`seg-item ${currency === c.code ? 'on' : ''}`} onClick={() => setCurrency(c.code)}>
+                  {c.symbol} {c.code}
                 </button>
               ))}
             </div>
