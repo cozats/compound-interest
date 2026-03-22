@@ -451,6 +451,23 @@
   }
 
   .tip.show { opacity: 1; }
+
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .footer a {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+
+  .footer a:hover {
+    color: var(--text-secondary);
+  }
 </style>
 </head>
 <body>
@@ -695,6 +712,10 @@ function App() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="footer">
+        <a href="https://github.com/cozats/compound-interest" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
       </div>
 
       <div className={`tip ${tip.on ? 'show' : ''}`} style={{ left: tip.x, top: tip.y }}>
